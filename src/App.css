@@ -1,0 +1,18 @@
+.artist-search {
+  border: none;
+}
+
+.song-card {
+  border-radius: 7px;
+  background-color: #a9a7ac;
+  height: 200px;
+  width: 200px;
+}
+
+.card-title {
+  background-color: #8ccf44;
+}
+
+.button {
+  background-color: rgb(241, 114, 50);
+}
