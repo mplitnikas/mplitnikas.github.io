@@ -1,16 +1,24 @@
+.app {
+  
+}
+
 .artist-search {
   border: none;
+  color: #89ce40;
 }
 
 .song-card {
   border-radius: 7px;
-  background-color: #a9a7ac;
-  height: 200px;
-  width: 200px;
+  background-color: #cac7ce;
+  color: #fff;
+  height: 300px;
+  width: 300px;
 }
 
 .card-title {
   background-color: #8ccf44;
+  border-radius: 5px;
+  padding: 4px;
 }
 
 .button {

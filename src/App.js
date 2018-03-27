@@ -1,26 +1,17 @@
 import React, {Component} from 'react';
 
 import './App.css';
-import SearchBox from './components/SearchBox';
-import SongCard from './components/SongCard';
+import SearchBoxComponent from './components/SearchBoxComponent';
+import SortMenuComponent from './components/SortMenuComponent';
+import SongGridComponent from './components/songs-grid/SongGridComponent';
 
 class App extends Component {
   render() {
     return (
-      <div classname="container">
-      <div className="row">
-        <div className="col-sm-12 text-center py-5">
-          <SearchBox/>
-        </div>
-      </div>
-        <div className="row">
-          <div className="col-sm-4">
-            <SongCard/>
-          </div>
-          <div className="col-sm-4">
-            <SongCard/>
-          </div>
-        </div>
+      <div className="app">
+        <SearchBoxComponent/>
+        <SortMenuComponent/>
+        <SongGridComponent/>
       </div>
     );
   }
