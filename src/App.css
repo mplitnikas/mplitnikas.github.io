@@ -40,7 +40,9 @@
 .btn-search:active, .btn-search:focus, .btn-search:visited, .btn-search:target {
   background-color: #79BD9A !important;
 }
-
+.btn-search, .input-search {
+  font-size: 2rem;
+}
 
 /* todo: delete these */
 .colors {
