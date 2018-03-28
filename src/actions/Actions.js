@@ -7,6 +7,10 @@ export const updateSearchTerms = (searchTerms) => {
   return {type: ActionTypes.UPDATE_SEARCH_TERMS, payload: searchTerms}
 }
 
+export const setIsLoading = (isLoading) => {
+  return {type: ActionTypes.SET_IS_LOADING, payload: isLoading};
+}
+
 export const submitSearchTerms = () => {
   const state = store.getState().songs;
   const searchTerms = state.searchTerms;
@@ -14,12 +18,12 @@ export const submitSearchTerms = () => {
   const url = `https://itunes.apple.com/search?term=${encodedSearch}`;
 
   return async function(dispatch) {
-    console.log('inside submit', url)
     try {
+      dispatch(setIsLoading(true));
       const response = await Axios.get(url);
+      dispatch(setIsLoading(false));
       if (response && response.data) {
-        console.log(response.data.results);
-        updateSongList(response.data.results);
+        dispatch(updateSongList(response.data.results));
       } else {
         throw new Error("Got no results for that search!");
       }
@@ -32,5 +36,3 @@ export const submitSearchTerms = () => {
 export const updateSongList = (songList) => {
   return {type: ActionTypes.UPDATE_SONG_LIST, payload: songList};
 }
-
-export const updateSortCriteria = () => {}

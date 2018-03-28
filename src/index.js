@@ -12,7 +12,6 @@ import songs from './reducers/songs';
 
 const reducer = combineReducers({songs});
 
-
 export const store = createStore(
   reducer,
   compose(
@@ -20,6 +19,8 @@ export const store = createStore(
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
   )
 );
+
+//todo: remove dev tools for build
 
 ReactDOM.render(
   <Provider store={store}>

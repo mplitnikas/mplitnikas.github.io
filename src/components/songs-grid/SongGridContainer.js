@@ -4,14 +4,13 @@ import SongGridComponent from './SongGridComponent';
 
 const mapStateToProps = (state) => {
   return {
-    songsList: state.songs
+    songList: state.songs.songList,
+    isLoading: state.songs.isLoading
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return {
-    
-  }
+  return {}
 }
 
 const SongGridContainer = connect(

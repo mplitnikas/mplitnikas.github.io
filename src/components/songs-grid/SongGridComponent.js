@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 import SongCardComponent from './SongCardComponent';
-import * as mockSongs from './../../sample-data.json';
+import loader from './../../loader.gif';
 
 const parseYear = (releaseDate) => {
   const newDate = new Date(releaseDate);
@@ -13,7 +13,6 @@ const millisToMinutesAndSeconds = (millis) => {
   const minutes = tempDate.getUTCMinutes();
   const seconds = tempDate.getUTCSeconds();
   return minutes + ':' + ((seconds + '').length === 1 ? '0' + seconds : seconds);
-  // todo: tests
 }
 
 const getTrackNumberInfo = ({trackNumber, trackCount}) => {
@@ -24,9 +23,20 @@ const getTrackNumberInfo = ({trackNumber, trackCount}) => {
   }
 }
 
-const drawSongCards = (songsList) => {
-  return songsList
-    .results
+const drawConditionalIsLoading = (isLoading, component) => {
+  return isLoading
+    ? loadingSpinner()
+    : component
+}
+
+const loadingSpinner = () => {
+  return (
+    <img className="m-5" src={loader} alt="loading..."/>
+  );
+}
+
+const drawSongCards = (songList) => {
+  return songList && songList
     .map(x => {
       return (<SongCardComponent
         songTitle={x.trackName}
@@ -37,7 +47,6 @@ const drawSongCards = (songsList) => {
         trackTime={millisToMinutesAndSeconds(x.trackTimeMillis)}
         trackNumber={getTrackNumberInfo({trackNumber: x.trackNumber, trackCount: x.trackCount})}
       />)
-        
     });
 }
 
@@ -45,8 +54,8 @@ class SongGridComponent extends Component {
   render() {
     return (
       <div className="container">
-        <div className="row">
-          {drawSongCards(mockSongs)}
+        <div className="row d-flex justify-content-center">
+          {drawConditionalIsLoading(this.props.isLoading, drawSongCards(this.props.songList))}
         </div>
       </div>
     );
