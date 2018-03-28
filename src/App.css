@@ -11,8 +11,8 @@
   border-radius: 7px;
   background-color: #CFF09E;
   box-shadow: 5px 8px 5px #ddd;
-  height: 410px;
-  width: 230px;
+  height: 460px;
+  width: 250px;
 }
 
 .card-title {
@@ -30,6 +30,7 @@
 
 .btn-sort {
   background-color: #3B8686;
+  color: #eee;
   border: none;
 }
 .btn-sort:hover {

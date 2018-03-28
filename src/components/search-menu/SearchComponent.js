@@ -1,6 +1,11 @@
 import React, {Component} from 'react';
 
-class SortComponent extends Component {
+class SearchComponent extends Component {
+
+  handleSearchbarChange = (event) => {
+    this.props.actions.updateSearchTerms(event.target.value);
+  }
+
   render() {
     return (
       <div className="container">
@@ -9,7 +14,9 @@ class SortComponent extends Component {
             <input
               className="h1 artist-search"
               placeholder="Search artists here_"
-              autoFocus/>
+              onInput={this.handleSearchbarChange}
+              autoFocus
+            />
           </div>
         </div>
       </div>
@@ -17,4 +24,4 @@ class SortComponent extends Component {
   }
 }
 
-export default SortComponent;
+export default SearchComponent;

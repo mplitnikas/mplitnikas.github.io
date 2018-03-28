@@ -1,9 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {Provider} from 'react-redux';
+import {createStore} from 'redux';
 import './index.css';
 import './../node_modules/bootstrap/dist/css/bootstrap.css'
-import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import App from './App';
+import songList from './reducers/songList';
+
+ReactDOM.render(
+  <Provider 
+    store={createStore(
+      songList,
+      window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+    }
+  >
+    <App/>
+  </Provider>
+  , document.getElementById('root'));
 registerServiceWorker();

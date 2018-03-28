@@ -1,17 +1,15 @@
 import React, {Component} from 'react';
 
 import './App.css';
-import SortComponent from './components/SortComponent';
-import SortMenuComponent from './components/SortMenuComponent';
-import SongGridComponent from './components/songs-grid/SongGridComponent';
+import SongGridContainer from './components/songs-grid/SongGridContainer';
+import SearchContainer from './components/search-menu/SearchContainer';
 
 class App extends Component {
   render() {
     return (
       <div className="app">
-        <SortComponent/>
-        <SortMenuComponent/>
-        <SongGridComponent/>
+        <SearchContainer/>
+        <SongGridContainer/>
       </div>
     );
   }
