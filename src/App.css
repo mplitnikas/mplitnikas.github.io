@@ -28,19 +28,18 @@
   color: #333;
 }
 
-.btn-sort {
+.btn-search {
   background-color: #3B8686;
   color: #eee;
   border: none;
 }
-.btn-sort:hover {
+.btn-search:hover {
   background-color: #A8DBA8;
   border: none;
 }
-.btn-sort:active, .btn-sort:focus, .btn-sort:visited, .btn-sort:target {
+.btn-search:active, .btn-search:focus, .btn-search:visited, .btn-search:target {
   background-color: #79BD9A !important;
 }
-
 
 
 /* todo: delete these */

@@ -5,15 +5,16 @@ import SearchComponent from './SearchComponent';
 
 const mapStateToProps = (state) => {
   return {
-    searchTerms: state.searchTerms,
-    sortType: state.sortType
+    searchTerms: state.songs.searchTerms,
+    sortType: state.songs.sortType
   };
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
     actions: {
-      updateSearchTerms: (terms) => dispatch(Actions.updateSearchTerms(terms))
+      updateSearchTerms: (terms) => dispatch(Actions.updateSearchTerms(terms)),
+      submitSearchTerms: (terms) => dispatch(Actions.submitSearchTerms(terms)),
     }
   }
 }

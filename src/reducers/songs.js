@@ -5,16 +5,24 @@ const getDefaultState = () => {
     songList: null,
     searchTerms: '',
     sortType: null,
+    isLoading: false
   }
 }
 
-const songList = (state = getDefaultState(), action) => {
-  switch (action) {
+const submitSearchRequest = async (state) => {
+  console.log('submit')
+  
+}
+
+const songs = (state = getDefaultState(), action) => {
+  switch (action.type) {
     case ActionTypes.UPDATE_SEARCH_TERMS:
       return {...state, searchTerms: action.payload};
+    case ActionTypes.SUBMIT_SEARCH_TERMS:
+      return submitSearchRequest(state);
     default:
       return state;
   }
 }
 
-export default songList;
+export default songs;
