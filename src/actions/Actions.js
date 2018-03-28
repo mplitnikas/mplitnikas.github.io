@@ -21,7 +21,6 @@ export const submitSearchTerms = () => {
     try {
       dispatch(setIsLoading(true));
       const response = await Axios.get(url);
-      dispatch(setIsLoading(false));
       if (response && response.data) {
         dispatch(updateSongList(response.data.results));
       } else {
@@ -29,6 +28,8 @@ export const submitSearchTerms = () => {
       }
     } catch (error) {
       console.log(error);
+    } finally {
+      dispatch(setIsLoading(false));
     }
   }
 }
