@@ -1,16 +1,10 @@
-import React, {Component} from 'react';
+import React from 'react';
 
 const getAltText = (collectionName) => {
   return "Album art" + ((collectionName)
     ? ` for ${collectionName}`
     : '');
 }
-
-const replaceImageUrl = (imageUrl) => {
-  return imageUrl.replace('100x100bb', '220x220bb');
-}
-//todo: error handling for no image (maybe just itunes/generic logo?)
-//todo: process image urls 100x100 -> 200x200
 
 const SongCard = ({songTitle, trackTime, trackNumber, imageUrl, albumName, artist, releaseYear}) => {
   return (
@@ -33,7 +27,7 @@ const SongCard = ({songTitle, trackTime, trackNumber, imageUrl, albumName, artis
           <div className="row d-flex justify-content-center">
             <div>
               <img
-                src={replaceImageUrl(imageUrl)}
+                src={imageUrl}
                 alt={getAltText(albumName)}
                 className="m-2"/>
             </div>

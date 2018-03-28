@@ -23,6 +23,10 @@ const getTrackNumberInfo = ({trackNumber, trackCount}) => {
   }
 }
 
+const replaceImageUrl = (imageUrl) => {
+  return imageUrl.replace('100x100bb', '220x220bb');
+}
+
 const drawConditionalIsLoading = (isLoading, component) => {
   return isLoading
     ? loadingSpinner()
@@ -36,18 +40,27 @@ const loadingSpinner = () => {
 }
 
 const drawSongCards = (songList) => {
-  return songList && songList
-    .map(x => {
+  if (!songList) {
+    return;
+  }
+
+  if (songList.length > 0) {
+    return songList
+    .map((song, index) => {
       return (<SongCardComponent
-        songTitle={x.trackName}
-        artist={x.artistName}
-        imageUrl={x.artworkUrl100}
-        albumName={x.collectionName}
-        releaseYear={parseYear(x.releaseDate)}
-        trackTime={millisToMinutesAndSeconds(x.trackTimeMillis)}
-        trackNumber={getTrackNumberInfo({trackNumber: x.trackNumber, trackCount: x.trackCount})}
+        key={index}
+        songTitle={song.trackName}
+        artist={song.artistName}
+        imageUrl={replaceImageUrl(song.artworkUrl100)}
+        albumName={song.collectionName}
+        releaseYear={parseYear(song.releaseDate)}
+        trackTime={millisToMinutesAndSeconds(song.trackTimeMillis)}
+        trackNumber={getTrackNumberInfo({trackNumber: song.trackNumber, trackCount: song.trackCount})}
       />)
     });
+  } else {
+    return <p className="h3">No songs found for that artist :(</p>
+  }
 }
 
 class SongGridComponent extends Component {

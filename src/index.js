@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
-import {createStore, combineReducers, applyMiddleware, compose} from 'redux';
+import {createStore, combineReducers, applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
 import './index.css';
 import './../node_modules/bootstrap/dist/css/bootstrap.css'
@@ -14,13 +14,8 @@ const reducer = combineReducers({songs});
 
 export const store = createStore(
   reducer,
-  compose(
-    applyMiddleware(thunk),
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-  )
+  applyMiddleware(thunk)
 );
-
-//todo: remove dev tools for build
 
 ReactDOM.render(
   <Provider store={store}>

@@ -1,7 +1,3 @@
-.app {
-  
-}
-
 .artist-search {
   border: none;
   color: #0B486B;
@@ -42,13 +38,4 @@
 }
 .btn-search, .input-search {
   font-size: 2rem;
-}
-
-/* todo: delete these */
-.colors {
-  a: #CFF09E;
-  b: #A8DBA8;
-  c: #79BD9A;
-  d: #3B8686;
-  e: #0B486B;
 }
