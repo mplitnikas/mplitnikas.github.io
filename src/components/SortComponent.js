@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-class SearchBox extends Component {
+class SortComponent extends Component {
   render() {
     return (
       <div className="container">
@@ -17,4 +17,4 @@ class SearchBox extends Component {
   }
 }
 
-export default SearchBox;
+export default SortComponent;

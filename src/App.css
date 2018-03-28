@@ -4,23 +4,49 @@
 
 .artist-search {
   border: none;
-  color: #89ce40;
+  color: #0B486B;
 }
 
 .song-card {
   border-radius: 7px;
-  background-color: #cac7ce;
-  color: #fff;
-  height: 300px;
-  width: 300px;
+  background-color: #CFF09E;
+  box-shadow: 5px 8px 5px #ddd;
+  height: 410px;
+  width: 230px;
 }
 
 .card-title {
-  background-color: #8ccf44;
-  border-radius: 5px;
-  padding: 4px;
+  background-color: #3B8686;
+  color: #eee;
+  font-size: 20px;
+  border-radius: 5px 5px 0px 0px;
+  height: 68px;
+  width: 100%;
 }
 
-.button {
-  background-color: rgb(241, 114, 50);
+.card-info {
+  color: #333;
+}
+
+.btn-sort {
+  background-color: #3B8686;
+  border: none;
+}
+.btn-sort:hover {
+  background-color: #A8DBA8;
+  border: none;
+}
+.btn-sort:active, .btn-sort:focus, .btn-sort:visited, .btn-sort:target {
+  background-color: #79BD9A !important;
+}
+
+
+
+/* todo: delete these */
+.colors {
+  a: #CFF09E;
+  b: #A8DBA8;
+  c: #79BD9A;
+  d: #3B8686;
+  e: #0B486B;
 }
