@@ -13,3 +13,5 @@ Things I'm interested in lately:
 - AWS, moving systems to the cloud
 - IT security, esp linux related
 - AI, agent model of cognition, internal family systems
+
+Oh yeah - I stole the name of this blog wholesale from [Crystal Society](http://crystal.raelifin.com/) by Max Harms. It's a great read if you haven't already.
